@@ -1,0 +1,22 @@
+.btn-content {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    
+
+    a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 60px;
+        font-size: 1.4rem;
+        transition: 0.5s;
+        color: black;
+        padding: 10px;
+        width: 100%;
+        &:hover{
+            background-color: #275179;
+        }
+    }
+}

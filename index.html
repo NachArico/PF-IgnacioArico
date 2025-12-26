@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El Santuario Libertad - Conoce el santuario de animales de Frank Cuesta en Tailandia. Visitas, tours y experiencias únicas.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>El Santuario Libertad - Inicio</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">🌿 El Santuario</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">El Santuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/acercade.html">Acerca De</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/donaciones.html">Donaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/visitas.html">Visitas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="productos">
+      <article class="productos__card">
+        <div class="productos__card__contenido">
+          <h2>Conoce el Santuario de Frank Cuesta</h2>
+          <p>El Santuario Libertad es un lugar único y especial que he creado, con el objetivo de facilitar el bienestar
+            de los animales en su hábitat natural. Podrás disfrutar de innumerables experiencias ayudando a los animales y
+            aprendiendo a como tratarlos en su día a día.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="gallery">
+      <div class="image"><img src="images/Santuario_Libertad.webp" alt="Vista del Santuario Libertad"></div>
+      <div class="image"><img src="images/Frank_Cuesta.webp" alt="Frank Cuesta"></div>
+      <div class="image"><img src="images/Frank_Snake.webp" alt="Frank con una serpiente"></div>
+      <div class="image"><img src="images/Frank_Cuesta_cortando_pasto.webp" alt="Frank trabajando en el santuario"></div>
+      <div class="image"><img src="images/Frank_Chispas_Capi.webp" alt="Frank con Chispas y Capi"></div>
+    </section>
+
+    <section class="products">
+      <article class="product">
+        <article class="prod">
+          <img src="images/Santuario_Libertad_plan_3_3.webp" alt="Tour básico">
+          <div>
+            <h2>Tour 1</h2>
+            <p>Tendrás acceso para conocer a Frank Cuesta, además de poder recorrer el Santuario y tener acceso con
+              ciertos animales, para alimentarlos y pasear con ellos. Los cupos son limitados. Sin duda una experiencia
+              increíble para iniciar en el mundo natural.</p>
+          </div>
+          <div class="btn-content">
+            <a href="./pages/visitas.html">Seleccionar tour</a>
+          </div>
+        </article>
+
+        <article class="prod">
+          <img src="images/Santuario_Ciervos.webp" alt="Tour intermedio">
+          <div>
+            <h2>Tour 2</h2>
+            <p>Tendrás acceso a todo lo del Tour 1, contando además con traslados desde Bangkok totalmente gratis.
+              Contarás con un paseo nocturno junto con Frank y sus animales, donde vivirás experiencias increíbles e
+              inolvidables.</p>
+          </div>
+          <div class="btn-content">
+            <a href="./pages/visitas.html">Seleccionar tour</a>
+          </div>
+        </article>
+
+        <article class="prod">
+          <img src="images/Santuario_Vaca.webp" alt="Tour completo">
+          <div>
+            <h2>Tour 3</h2>
+            <p>Tendrás acceso al paquete completo, donde incluye una semana aprendiendo y asistiendo a Frank en el
+              Santuario, además incluyendo todo lo comentado en los dos paquetes anteriores. Este tour debe ser reservado
+              con antelación.</p>
+          </div>
+          <div class="btn-content">
+            <a href="./pages/visitas.html">Seleccionar tour</a>
+          </div>
+        </article>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contenedor-footer"></div>
+    <p>© El Santuario - 2025</p>
+  </footer>
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,943 @@
+//base
+@import "base/vars";
+@import "base/reset";
+
+//components
+@import "components/boton";
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+h1 {
+    font-family: 'Lato', Verdana;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Lato', Verdana;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1.05rem;
+    margin: 0;
+    line-height: 1.8;
+    color: #444;
+}
+
+h2 {
+    font-family: 'Lato', Verdana;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: $dark-color;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+// ========================================
+// NAVBAR STYLES - CLEAN SINGLE COLOR
+// ========================================
+.navbar {
+    background: $primary-color !important;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: $light-color !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.3px;
+    transition: $transition-normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: $transition-normal;
+
+    &:hover {
+        color: $light-color !important;
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    &.active {
+        color: $light-color !important;
+        background: rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+    }
+}
+
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: $transition-normal;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+    }
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.offcanvas {
+    background: $primary-color;
+
+    &-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+    }
+
+    &-title {
+        color: $light-color;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+
+    &-body {
+        padding: 1.5rem;
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            padding: 1rem 1.2rem !important;
+            border-radius: 10px;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: $light-color !important;
+            }
+
+            &.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: $light-color !important;
+            }
+        }
+    }
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// ========================================
+// MAIN & BODY
+// ========================================
+body {
+    background-color: $main-color;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    background-color: $main-color;
+}
+
+// ========================================
+// HERO SECTION - STUNNING DESIGN
+// ========================================
+.hero {
+    display: flex;
+    background: $gradient-dark;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba($accent-color, 0.15) 0%, transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.hero img {
+    width: 50%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.hero-content {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $cream 0%, $main-color 100%);
+    position: relative;
+
+    h2 {
+        color: $primary-color;
+        text-align: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: $gradient-accent;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        color: #555;
+        max-width: 600px;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 15px 40px;
+        background: $gradient-primary;
+        color: $light-color;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: $radius-full;
+        transition: $transition-normal;
+        box-shadow: $shadow-md;
+        border: none;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: $shadow-hover;
+        }
+    }
+}
+
+// ========================================
+// PRODUCTOS SECTION - PREMIUM CARD
+// ========================================
+.productos {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    &__card {
+        background: $light-color;
+        border-radius: $radius-lg;
+        box-shadow: $shadow-lg;
+        overflow: hidden;
+        transition: $transition-normal;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: $gradient-primary;
+        }
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: $shadow-hover;
+        }
+
+        &__contenido {
+            padding: 50px 40px;
+            text-align: center;
+
+            h2 {
+                color: $primary-color;
+                margin-bottom: 20px;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 60px;
+                    height: 4px;
+                    background: $gradient-accent;
+                    margin: 20px auto 0;
+                    border-radius: 2px;
+                }
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #555;
+            }
+        }
+    }
+}
+
+// ========================================
+// GALLERY - INTERACTIVE & BEAUTIFUL
+// ========================================
+.gallery {
+    display: flex;
+    padding: 40px 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, transparent 0%, rgba($primary-color, 0.03) 100%);
+}
+
+.image {
+    flex-grow: 1;
+    flex-basis: 260px;
+    max-width: 350px;
+    height: 320px;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: $transition-slow;
+    box-shadow: $shadow-md;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: $gradient-overlay;
+        opacity: 0;
+        transition: $transition-normal;
+    }
+
+    &:hover {
+        flex-grow: 2.5;
+        box-shadow: $shadow-hover;
+
+        &::after {
+            opacity: 1;
+        }
+
+        img {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition-slow;
+    }
+}
+
+.gallery:hover .image:not(:hover) {
+    filter: brightness(0.6) saturate(0.4);
+    flex-grow: 0.6;
+    transform: scale(0.98);
+}
+
+// ========================================
+// PRODUCTS (Tours) - PREMIUM CARDS
+// ========================================
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    padding: 60px 30px;
+    gap: 35px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.prod {
+    display: flex;
+    flex-direction: column;
+    background: $light-color;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: $transition-normal;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: $gradient-accent;
+        transform: scaleX(0);
+        transition: $transition-normal;
+    }
+
+    &:hover {
+        transform: translateY(-12px);
+        box-shadow: $shadow-hover;
+
+        &::before {
+            transform: scaleX(1);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: $transition-normal;
+    }
+
+    &:hover img {
+        transform: scale(1.08);
+    }
+
+    >div:not(.btn-content) {
+        padding: 30px 25px 15px;
+        flex-grow: 1;
+        background: $light-color;
+
+        h2 {
+            font-size: 1.6rem;
+            color: $primary-color;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #666;
+            padding: 0;
+            text-align: left;
+            line-height: 1.7;
+        }
+    }
+}
+
+// ========================================
+// HERO ABOUT - ELEGANT SECTIONS
+// ========================================
+.hero-product-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, $main-color 0%, $cream 100%);
+    padding: 60px 20px;
+}
+
+.hero-content-ab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 40px;
+    background: $light-color;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    transition: $transition-normal;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: $gradient-primary;
+    }
+
+    &:hover {
+        box-shadow: $shadow-hover;
+        transform: translateY(-5px);
+    }
+
+    img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: $radius-md;
+        margin: 25px 0;
+        box-shadow: $shadow-md;
+    }
+
+    h2 {
+        color: $primary-color;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $gradient-accent;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        color: #555;
+        max-width: 800px;
+    }
+
+    >div {
+        padding: 20px;
+        border-radius: $radius-md;
+        transition: $transition-normal;
+    }
+}
+
+// ========================================
+// DONATIONS SECTION - IMPACTFUL
+// ========================================
+.hero-don {
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, $cream 0%, $main-color 100%);
+    min-height: 400px;
+
+    img {
+        width: 50%;
+        min-width: 300px;
+        flex-grow: 1;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+}
+
+.hero-content-don {
+    flex: 1;
+    min-width: 300px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 15px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $gradient-accent;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        max-width: 550px;
+        color: #555;
+    }
+}
+
+.donaciones-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 60px 30px;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.donacion-box {
+    display: flex;
+    flex-direction: column;
+    background: $light-color;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: $transition-normal;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: $gradient-primary;
+        transform: scaleX(0);
+        transition: $transition-normal;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: $shadow-hover;
+
+        &::before {
+            transform: scaleX(1);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: $transition-normal;
+    }
+
+    &:hover img {
+        transform: scale(1.05);
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        color: $primary-color;
+        padding: 20px 20px 0;
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: #666;
+        padding: 10px 20px;
+    }
+}
+
+.donacion-content {
+    padding: 0 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+// ========================================
+// CONTACT SECTION - MODERN FORM
+// ========================================
+.hero-contact {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, $main-color 0%, $cream 50%, $main-color 100%);
+    min-height: calc(100vh - 200px);
+    padding-bottom: 60px;
+}
+
+.hero-content-ct {
+    padding: 60px 20px 30px;
+    text-align: center;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 10px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $gradient-accent;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        max-width: 550px;
+        margin: 0 auto;
+        color: #555;
+    }
+}
+
+.form-register {
+    width: 100%;
+    max-width: 480px;
+    background: $gradient-dark;
+    padding: 45px 40px;
+    margin: 20px auto 0;
+    border-radius: $radius-lg;
+    font-family: 'Lato', sans-serif;
+    color: $light-color;
+    box-shadow: $shadow-lg;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: $gradient-accent;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.controls {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    border-radius: $radius-sm;
+    margin-bottom: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: $light-color;
+    transition: $transition-normal;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $accent-color;
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 0 20px rgba($accent-color, 0.2);
+    }
+}
+
+.form-register {
+    p {
+        height: auto;
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 10px 0;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    a {
+        color: $accent-color;
+        text-decoration: none;
+        transition: $transition-fast;
+        font-weight: 500;
+
+        &:hover {
+            color: lighten($accent-color, 15%);
+            text-decoration: underline;
+        }
+    }
+
+    .botons {
+        width: 100%;
+        background: $gradient-accent;
+        border: none;
+        padding: 16px;
+        color: $light-color;
+        margin: 25px 0 15px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: $transition-normal;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: $shadow-glow;
+        }
+    }
+}
+
+// ========================================
+// FOOTER - ELEGANT
+// ========================================
+footer {
+    background: $gradient-primary;
+    padding: 40px 20px;
+    margin-top: auto;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: $gradient-accent;
+    }
+
+    p {
+        color: $light-color;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// ========================================
+// BUTTON STYLES - PREMIUM
+// ========================================
+.btn-content {
+    padding: 20px 25px;
+
+    a {
+        background: $gradient-accent;
+        color: $light-color !important;
+        font-weight: 700;
+        box-shadow: $shadow-md;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.95rem;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: $shadow-glow;
+            color: $light-color !important;
+        }
+    }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 280px;
+    }
+
+    .hero-content {
+        padding: 40px 25px;
+    }
+
+    .hero-don {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            max-height: 280px;
+        }
+    }
+
+    .hero-content-don {
+        padding: 40px 25px;
+    }
+
+    .gallery {
+        padding: 25px 15px;
+        gap: 15px;
+    }
+
+    .image {
+        flex-basis: 100%;
+        max-width: 100%;
+        height: 240px;
+    }
+
+    .gallery:hover .image:not(:hover) {
+        filter: none;
+        flex-grow: 1;
+        transform: none;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content-ab {
+        margin: 15px;
+        padding: 25px;
+    }
+
+    .productos {
+        padding: 40px 15px;
+
+        &__card__contenido {
+            padding: 30px 20px;
+        }
+    }
+
+    .product,
+    .donaciones-boxes {
+        padding: 40px 15px;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .form-register {
+        margin: 20px 15px 0;
+        padding: 30px 25px;
+    }
+
+    .product,
+    .donaciones-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content a {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+// ========================================
+// ANIMATIONS
+// ========================================
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.productos__card,
+.prod,
+.donacion-box,
+.hero-content-ab {
+    animation: fadeInUp 0.6s ease-out;
+}
